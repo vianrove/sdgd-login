@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import routes from './routes/rutas.js';
 import mongoose from 'mongoose';
-
+import cors from 'cors';
 dotenv.config();
 const app = express();
 
@@ -10,7 +10,7 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5080;
 app.get('/', (req, res) => res.send('HELLO WORLD'));
-
+app.use(cors())
 app.use(routes);
 
 app.use((req,res)=>{
