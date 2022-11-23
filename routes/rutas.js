@@ -6,15 +6,6 @@ const routes = express.Router();
 
 routes.get('/view',viewAll);
 
-routes.get('/listUsers',(req,res)=>{
-    read((result)=>{
-        if(result.length == 0){
-            res.status(500).json({"status":"error interno"})
-        }
-        res.json(result)
-    })
-});
-
 routes.post('/login',login);
 
 routes.post('/signUp',createClient);
