@@ -73,7 +73,7 @@ export const login = (req,res)=>{
         }
     ).catch(err=>{
         console.log(err.message)
-        res.status(500).json({message:'failed'})
+        res.status(200).json({message:'failed'})
     })
 
 }
