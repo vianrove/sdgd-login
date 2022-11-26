@@ -7,10 +7,11 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 const PORT = process.env.PORT || 5080;
+
 app.get('/', (req, res) => res.send('HELLO WORLD'));
-app.use(cors())
 app.use(routes);
 
 app.use((req,res)=>{
